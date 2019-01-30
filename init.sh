@@ -9,6 +9,7 @@ function ask() {
 }
 
 install() {
+  if [ ! -e $1 ]; then echo "$1 does not exist."; return; fi
   if [ -e $2 ] || [ -L $2 ]; then
     if [ $OVERWRITE ] || [ 1 == $(ask "$2 already exists. Overwrite?") ]; then
       rm -f $2
@@ -40,17 +41,9 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+install_all \
+  $(pwd)/.vimrc ~/.vimrc \
+  $(pwd)/.zshrc ~/.zshrc \
+  $(pwd)/.tmux.conf ~/.tmux.conf \
+  $(pwd)/.ctags ~/.ctags
 
-# if [[ $OVERWRITE ]]; then
-#   echo "OVERWRITEING"
-# else
-#   echo "NAAAA"
-# fi
-
-# ask "Do you want to continue?"
-# install .vimrc ~/.testrcc
-
-# install $(pwd)/vimcpy ~/test_installer/vimcpy
-
-
-install_all $(pwd)/vimcpy ~/test_installer/vimcpy
