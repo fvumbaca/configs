@@ -1,9 +1,9 @@
 
-# Configuration!
+# Configuration! 🧙⚡
 The magical incantation to a sweet shell setup:
 
 ```bash
-$ git clone git@github.com:fvumbaca/configs.git ~/.config && ~/.config/init.sh
+$ git clone git@github.com:fvumbaca/configs.git ~/.configs && ~/.config/init.sh
 ```
 
 ## Elements
