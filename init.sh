@@ -41,9 +41,11 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+DIR=$(dirname "$0")
+
 install_all \
-  $(pwd)/.vimrc ~/.vimrc \
-  $(pwd)/.zshrc ~/.zshrc \
-  $(pwd)/.tmux.conf ~/.tmux.conf \
-  $(pwd)/.ctags ~/.ctags
+  ${DIR}/.vimrc ~/.vimrc \
+  ${DIR}/.zshrc ~/.zshrc \
+  ${DIR}/.tmux.conf ~/.tmux.conf \
+  ${DIR}/.ctags ~/.ctags
 
